@@ -1,0 +1,10 @@
+.hide{
+    display: none;
+}
+mat-footer-row mat-footer-cell{
+    justify-content: center;
+    font-style: italic;
+}
+.ml-10 {
+    margin-left: 10px;
+}

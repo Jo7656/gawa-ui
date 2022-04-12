@@ -1,0 +1,90 @@
+<div class="content">
+  <div class="content-header">
+    <a id="contentMenu" href="#" class="content-menu d-none d-lg-flex"
+      ><i data-feather="menu"></i
+    ></a>
+    <a id="mobileMenu" href="#" class="content-menu d-lg-none"
+      ><i data-feather="menu"></i
+    ></a>
+  </div>
+  <!-- content-header -->
+  <div class="content-body">
+    <alert></alert>
+    <div class="card card-main">
+      <div class="card-body11">
+        <h2 class="card-title">Routes</h2>
+
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+
+    <div class="tab01">
+      <button
+        class="tablinks"
+        onclick="openCity(event, 'Service-Details')"
+        id="defaultOpen"
+      >
+        Routes Details
+      </button>
+
+      <button class="tablinks" onclick="openCity(event, 'Plugins')">
+        Plugins
+      </button>
+    </div>
+
+    <div id="Service-Details" class="tabcontent">
+      <div>
+        <h3 class="heading">Routes Details</h3>
+      </div>
+      <div class="container servicemanage01">
+        <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col25">
+              <label for="fname">RoutePath</label>
+            </div>
+            <mat-form-field class="col75">
+              <input  matInput type="text" formControlName="routePath">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Route Method</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput  type="text" formControlName="routeMethod">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Route URI</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput  type="text" formControlName="routeUri">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Enable Strip Path</label>
+            </div>
+
+            <mat-radio-group class="col75" formControlName="stripPath">
+              <mat-radio-button value='yes' >Yes</mat-radio-button>
+              <mat-radio-button value='no'>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="row">
+            <input type="submit" class="submit0111" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- content-body -->
+</div>
+<!-- content -->
