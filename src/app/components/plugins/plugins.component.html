@@ -11,47 +11,28 @@
   <div class="content-body">
     <div class="card card-main">
       <div class="card-body11">
-        <h2 class="card-title">Routes</h2>
+        <h2 class="card-title">Plugins</h2>
 
-        <p class="card-text">
-        ......................................
-        </p>
+        <!-- <p class="card-text">......................................</p> -->
       </div>
     </div>
     <div>
-      <button mat-button class="btn service123"[routerLink]="['/plugins/all']" > View All available Plugins</button>
-      <!-- <div class="search-div"> 
-          <mat-form-field class="search-form-field">
-              <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off"> 
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
-                  <mat-icon>close</mat-icon>
-              </button>
-          </mat-form-field>
-      </div> -->
+      <button mat-button class="btn service123" [routerLink]="['/plugins/all']">
+        View All available Plugins
+      </button>
       <br />
       <br />
       <div class="mat-elevation-z8">
         <mat-table [dataSource]="listData" matSort>
-          <ng-container matColumnDef="routePath">
+          <ng-container matColumnDef="configId">
             <mat-header-cell *matHeaderCellDef mat-sort-header>RoutePath</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.routePath  }} </mat-cell>
+            <mat-cell *matCellDef="let element"> {{ element.configId  }} </mat-cell>
           </ng-container>
-          <ng-container matColumnDef="routeMethod">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Route Method</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.routeMethod }} </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="routeUri">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Route URI</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.routeUri }} </mat-cell>
-          </ng-container>
-
           <ng-container matColumnDef="actions">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <i class="bi bi-pencil-square ml-10" (click)="openDetails(row.routeId)"></i>
               <i class="bi bi-archive-fill ml-10"(click)="deleteRoute(row.routeId)"></i>
-             
-            
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="loading">
@@ -70,79 +51,11 @@
           <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide': !(listData!=null && listData.data.length==0)}"></mat-footer-row>  
        
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[5, 10,25,100]" pageSize="5" showFirstLastButtons></mat-paginator>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          pageSize="5"
+          showFirstLastButtons
+        ></mat-paginator>
       </div>
-      <!-- <select class="form-select" aria-label="Default select example">
-        <option selected>25</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-
-      <div class="input-group">
-        <form style="margin: auto; max-width: 300px">
-          <input type="text" placeholder="Search.." name="search2" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
-    </div>
-    <br />
-    <table id="table0101" class="table table-striped" style="width: 100%">
-      <thead>
-        <tr class="table011">
-          <th>Id</th>
-          <th>Host</th>
-          <th>Service</th>
-          <th>Paths</th>
-          <th>Created</th>
-          <th>Security</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <i class="fa fa-eye" aria-hidden="true"></i>asaadff- d-vd-d-- v-ssxs
-          </td>
-          <td>tiger.com</td>
-          <td>tiger</td>
-          <td>-</td>
-          <td>21 nov 2020</td>
-          <td>
-            <a href="routes -manage.html"
-              ><i class="fa fa-pencil" aria-hidden="true"></i
-            ></a>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <i class="fa fa-eye" aria-hidden="true"></i>asaadff- d-vd-d-- v-ssxs
-          </td>
-          <td>tiger.com</td>
-          <td>tiger</td>
-          <td>-</td>
-          <td>21 nov 2020</td>
-          <td>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div> -->
-      <!-- content-body -->
-    </div>
-    <!-- content -->
-
-    <!-- 
-    <mat-table [dataSource]="listData"></mat-table>
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row;columns: displayedColumns;"></mat-row>
-</div> -->
   </div>
 </div>

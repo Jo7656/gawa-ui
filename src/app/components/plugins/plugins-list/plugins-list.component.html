@@ -1,1 +1,33 @@
-<p>plugins-list works!</p>
+
+<div class="content">
+  <div class="content-header">
+    <a id="contentMenu" href="#" class="content-menu d-none d-lg-flex"
+      ><i data-feather="menu"></i
+    ></a>
+    <a id="mobileMenu" href="#" class="content-menu d-lg-none"
+      ><i data-feather="menu"></i
+    ></a>
+  </div>
+  <!-- content-header -->
+  <div class="content-body">
+    <div class="card card-main">
+        <div class="card-body11">
+          <h2 class="card-title">Plugins List</h2>
+  
+          <p class="card-text">List of Available plugins</p>
+        </div>
+      </div>
+    <div class="card card-main">
+       
+
+          <mat-card class="example-card"  *ngFor="let plugin of pluginsList;">
+            <mat-card-subtitle>Transformer Plugin</mat-card-subtitle>
+            <mat-card-title>{{plugin}}</mat-card-title>
+            <mat-card-content>
+              <p>Description</p>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div></div>
+  </div>
+</div>

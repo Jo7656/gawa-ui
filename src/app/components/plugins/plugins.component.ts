@@ -14,7 +14,7 @@ export class PluginsComponent implements OnInit {
 
 array:any;
 
-  columndefs : any[] = ['routePath','routeMethod','routeUri', 'actions'];
+  columndefs : any[] = ['configId','actions'];
 
   listData:MatTableDataSource<any>;
 
@@ -26,8 +26,12 @@ array:any;
   constructor(private gateWayService:GatewayService, private router: Router) { }
 
   ngOnInit(): void {
-    this.gateWayService.getAvailablePluginsList().subscribe(plugins=>{
-     console.log("1111111111",plugins);
+    this.gateWayService.getPluginConfigs().subscribe(plugins=>{
+     this.array=plugins;
+    this.listData=new MatTableDataSource(this.array);
+    this.listData.sort=this.sort;
+    this.listData.paginator=this.paginator
+    console.log("1111111111111111111",this.listData.data)
     })
   }
 }

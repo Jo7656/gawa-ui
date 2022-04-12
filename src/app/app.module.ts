@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { AlertModule } from './_alert';
+import {MatCardModule} from '@angular/material/card';
 import { PluginsListComponent } from './components/plugins/plugins-list/plugins-list.component';
 
 @NgModule({
@@ -48,7 +49,8 @@ import { PluginsListComponent } from './components/plugins/plugins-list/plugins-
     ReactiveFormsModule,
     FormsModule,
     MatFormFieldModule,
-    AlertModule
+    AlertModule,
+    MatCardModule
   ],
   exports: [
     MatTableModule,
@@ -60,7 +62,8 @@ import { PluginsListComponent } from './components/plugins/plugins-list/plugins-
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

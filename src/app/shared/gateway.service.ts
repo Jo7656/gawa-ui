@@ -30,4 +30,8 @@ export class GatewayService {
   getAvailablePluginsList(){
     return this.http.get(`http://localhost:8080/v1/plugins/new`);
   }
+
+  getPluginConfigs(){
+    return this.http.get(`http://localhost:8080/v1/plugins`);
+  }
 }
