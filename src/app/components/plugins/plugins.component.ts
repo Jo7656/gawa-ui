@@ -14,7 +14,7 @@ export class PluginsComponent implements OnInit {
 
 array:any;
 
-  columndefs : any[] = ['configId','actions'];
+  columndefs : any[] = ['configId','pluginName','actions'];
 
   listData:MatTableDataSource<any>;
 
@@ -31,7 +31,22 @@ array:any;
     this.listData=new MatTableDataSource(this.array);
     this.listData.sort=this.sort;
     this.listData.paginator=this.paginator
-    console.log("1111111111111111111",this.listData.data)
+    console.log("11111111111111111111", this.array)
     })
   }
+
+  deletePlugin(routeId:any){
+    this.gateWayService.deleteRoute(routeId).subscribe(data=>{
+   this.gateWayService.getRoutes().subscribe(routes=>{
+     this.array=routes;
+     this.listData=new MatTableDataSource(this.array);
+     this.listData.sort=this.sort;
+     this.listData.paginator=this.paginator
+   })
+ })
+}
+
+openDetails(routeId:any){
+ this.router.navigate(['/route', routeId]);    
+}
 }

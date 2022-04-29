@@ -20,6 +20,12 @@
       <button mat-button class="btn service123" [routerLink]="['/plugins/all']">
         View All available Plugins
       </button>
+
+      <!-- <button mat-button class="btn service123" [routerLink]="['/plugins/',0]">
+       ADD Plugin to Route 
+
+       
+      </button> -->
       <br />
       <br />
       <div class="mat-elevation-z8">
@@ -28,11 +34,18 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header>RoutePath</mat-header-cell>
             <mat-cell *matCellDef="let element"> {{ element.configId  }} </mat-cell>
           </ng-container>
+          <ng-container matColumnDef="pluginName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Plugin Name</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              Request Transformer
+           </mat-cell>
+          </ng-container>
           <ng-container matColumnDef="actions">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let row">
               <i class="bi bi-pencil-square ml-10" (click)="openDetails(row.routeId)"></i>
-              <i class="bi bi-archive-fill ml-10"(click)="deleteRoute(row.routeId)"></i>
+              <i class="bi bi-archive-fill ml-10"(click)="deletePlugin(row.routeId)"></i>
             </mat-cell>
           </ng-container>
           <ng-container matColumnDef="loading">

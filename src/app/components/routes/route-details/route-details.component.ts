@@ -64,13 +64,13 @@ export class RouteDetailsComponent implements OnInit {
   onSubmit() {
     console.warn(this.routeForm.value);
 
-    if (this.routeForm.value) {
+    if (this.routeForm.valid) {
       this.service
         .createRoute({
           routeId: this.routeForm.value.routeId,
           routeMethod: this.routeForm.value.routeMethod,
           routePath: this.routeForm.value.routePath,
-          routeUri: this.routeForm.value.routePath,
+          routeUri: this.routeForm.value.routeUri,
           stripPath: this.routeForm.value.stripPath=='yes'?true:false,
         })
         .subscribe((data) => {

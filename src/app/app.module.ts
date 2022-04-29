@@ -16,13 +16,17 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { RouteDetailsComponent } from './components/routes/route-details/route-details.component';
 import { MatRadioModule } from '@angular/material/radio';
-import{HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FormsModule} from "@angular/forms";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { AlertModule } from './_alert';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { PluginsListComponent } from './components/plugins/plugins-list/plugins-list.component';
+import { PluginDetailsComponent } from './components/plugins/plugin-details/plugin-details.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,7 @@ import { PluginsListComponent } from './components/plugins/plugins-list/plugins-
     PluginsComponent,
     RouteDetailsComponent,
     PluginsListComponent,
+    PluginDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +50,15 @@ import { PluginsListComponent } from './components/plugins/plugins-list/plugins-
     MatSortModule,
     MatInputModule,
     MatRadioModule,
+    MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatGridListModule,
     FormsModule,
     MatFormFieldModule,
     AlertModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   exports: [
     MatTableModule,
@@ -59,11 +67,13 @@ import { PluginsListComponent } from './components/plugins/plugins-list/plugins-
     MatRadioModule,
     MatSortModule,
     MatInputModule,
+    MatButtonModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatGridListModule,
     FormsModule,
-    MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

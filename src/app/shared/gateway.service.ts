@@ -34,4 +34,13 @@ export class GatewayService {
   getPluginConfigs(){
     return this.http.get(`http://localhost:8080/v1/plugins`);
   }
+  deletePluginDetails(id){
+    return this.http.delete(`http://localhost:8080/v1/plugins/`+id);
+  }
+  getPluginDetailsById(id){
+    return this.http.get(`http://localhost:8080/v1/plugins/`+id);
+  }
+  addPluginToRoute(name,req){
+    return this.http.post(`http://localhost:8080/v1/plugins/`+name,req);
+  }
 }

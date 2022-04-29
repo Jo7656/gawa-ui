@@ -1,0 +1,102 @@
+<div class="content">
+  <div class="content-header">
+    <a id="contentMenu" href="#" class="content-menu d-none d-lg-flex"
+      ><i data-feather="menu"></i
+    ></a>
+    <a id="mobileMenu" href="#" class="content-menu d-lg-none"
+      ><i data-feather="menu"></i
+    ></a>
+  </div>
+  <!-- content-header -->
+  <div class="content-body">
+    <div class="card card-main">
+      <div class="card-body11">
+        <h2 class="card-title">Plugins</h2>
+
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+
+    <div class="tab01">
+      <!-- 
+          class="tablinks"
+          onclick="openCity(event, 'Service-Details')"
+          id="defaultOpen"
+        > -->
+      <button>Plugin Details</button>
+
+      <!-- <button class="tablinks" onclick="openCity(event, 'Plugins')">
+          Plugins
+        </button> -->
+    </div>
+
+    <div id="Service-Details" class="tabcontent">
+      <div>
+        <h3 class="heading">Plugin Details</h3>
+      </div>
+      <div class="container servicemanage01">
+        <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col25">
+              <label for="fname">Route</label>
+            </div>
+            <mat-form-field class="col75">
+              <!-- <mat-label>Choose an option</mat-label> -->
+              <mat-select [disabled]="disableSelect.value"  formControlName="routeId">
+                <ng-container *ngFor="let route of routes; index as index">
+                  <mat-option [value]="route"
+                    >{{ route.routeUri }}
+                  </mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Headers to Add</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput type="text" formControlName="headersToAdd" />
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Headers to Remove</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput type="text" formControlName="headersToRemove" />
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Add Params</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput type="text" formControlName="queryParamsToAdd" />
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <div class="col25">
+              <label for="lname">Remove Params</label>
+            </div>
+            <mat-form-field class="col75">
+              <input matInput type="text" formControlName="queryParamsToRemove" />
+            </mat-form-field>
+          </div>
+          
+        
+    
+
+          <div class="row">
+            <input type="submit" class="submit0111" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- content-body -->
+</div>
+<!-- content -->
