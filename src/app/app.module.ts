@@ -16,7 +16,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { RouteDetailsComponent } from './components/routes/route-details/route-details.component';
 import { MatRadioModule } from '@angular/material/radio';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -26,8 +26,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PluginsListComponent } from './components/plugins/plugins-list/plugins-list.component';
 import { PluginDetailsComponent } from './components/plugins/plugin-details/plugin-details.component';
-import {MatSelectModule} from '@angular/material/select';
-
+import { MatSelectModule } from '@angular/material/select';
+// import { HtpErrorInterceptor } from './shared/HttpErrorInterceptor';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import {MatSelectModule} from '@angular/material/select';
     PluginsComponent,
     RouteDetailsComponent,
     PluginsListComponent,
-    PluginDetailsComponent
+    PluginDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     AlertModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule.forRoot({
+      timeOut:10000,
+      positionClass:"toast-bottom-left"
+    })
   ],
   exports: [
     MatTableModule,
@@ -73,9 +78,16 @@ import {MatSelectModule} from '@angular/material/select';
     MatGridListModule,
     FormsModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: HtpErrorInterceptor,
+    //   multi: true,
+    // },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

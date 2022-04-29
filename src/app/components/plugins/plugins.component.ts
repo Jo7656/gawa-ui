@@ -31,22 +31,22 @@ array:any;
     this.listData=new MatTableDataSource(this.array);
     this.listData.sort=this.sort;
     this.listData.paginator=this.paginator
-    console.log("11111111111111111111", this.array)
+ 
     })
   }
 
-  deletePlugin(routeId:any){
-    this.gateWayService.deleteRoute(routeId).subscribe(data=>{
-   this.gateWayService.getRoutes().subscribe(routes=>{
-     this.array=routes;
-     this.listData=new MatTableDataSource(this.array);
-     this.listData.sort=this.sort;
-     this.listData.paginator=this.paginator
-   })
+  deletePlugin(configId:any){
+    this.gateWayService.deletePluginDetails(configId).subscribe(data=>{
+      this.gateWayService.getPluginConfigs().subscribe(plugins=>{
+        this.array=plugins;
+       this.listData=new MatTableDataSource(this.array);
+       this.listData.sort=this.sort;
+       this.listData.paginator=this.paginator
+       })
  })
 }
 
-openDetails(routeId:any){
- this.router.navigate(['/route', routeId]);    
+openDetails(configId:any){
+ this.router.navigate(['/plugins/', configId]);    
 }
 }

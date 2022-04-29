@@ -39,12 +39,11 @@
       </div>
       <div class="container servicemanage01">
         <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
-          <div class="row">
+          <div class="row" [ngClass]  [ngClass]="id ? 'hidden' : ''">
             <div class="col25">
               <label for="fname">Route</label>
             </div>
             <mat-form-field class="col75">
-              <!-- <mat-label>Choose an option</mat-label> -->
               <mat-select [disabled]="disableSelect.value"  formControlName="routeId">
                 <ng-container *ngFor="let route of routes; index as index">
                   <mat-option [value]="route"
@@ -86,11 +85,7 @@
               <input matInput type="text" formControlName="queryParamsToRemove" />
             </mat-form-field>
           </div>
-          
-        
-    
-
-          <div class="row">
+          <div class="row" [ngClass]="id ? 'hidden' : ''" >
             <input type="submit" class="submit0111" value="Submit" />
           </div>
         </form>

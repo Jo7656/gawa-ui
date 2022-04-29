@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'route/:id', component: RouteDetailsComponent },
   { path: 'plugins/all', component: PluginsListComponent },
   { path: 'plugins/add/:name', component: PluginDetailsComponent },
+  { path: 'plugins/:id', component: PluginDetailsComponent },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'prefix' },
 ];
 
